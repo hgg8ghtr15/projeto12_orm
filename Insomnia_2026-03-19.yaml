@@ -1,0 +1,238 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: ORM
+meta:
+  id: wrk_f1a339c73a0f4c9483a46ebb882647d4
+  created: 1773887355578
+  modified: 1773887355578
+  description: ""
+collection:
+  - name: users
+    meta:
+      id: fld_2c15997fafdc44019da01a1a72cf6da3
+      created: 1773887370015
+      modified: 1773887453539
+      sortKey: -1773887370015
+      description: ""
+    children:
+      - url: "{{ _.url_base }}/{{ _.RESORCE }}"
+        name: index
+        meta:
+          id: req_f59bb67e1051494cbcfe619a98c41228
+          created: 1773887578593
+          modified: 1773887671000
+          isPrivate: false
+          description: ""
+          sortKey: -1773887578593
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.4.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.url_base }}/{{ _.RESORCE }}"
+        name: create
+        meta:
+          id: req_c4e1c0a8fd4d4ca5925e04c0bb072ebc
+          created: 1773887680943
+          modified: 1773971570791
+          isPrivate: false
+          description: ""
+          sortKey: -1773777889092
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name":"Maria",
+            	"email":"Marialukascj@gmail.com"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.4.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.url_base }}/{{ _.RESORCE }}/e9c0de16-ad50-4792-964f-8eaefe39a47b"
+        name: show
+        meta:
+          id: req_674728662f604c3aba9c20b43b0604e4
+          created: 1773887717952
+          modified: 1773972823709
+          isPrivate: false
+          description: ""
+          sortKey: -1773832733842.5
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.4.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+    environment:
+      RESORCE: users
+  - name: questions
+    meta:
+      id: fld_bf804d25e2044faa90bba80690dc80b0
+      created: 1773887786864
+      modified: 1773887800064
+      sortKey: -1773887786864
+      description: ""
+    children:
+      - url: "{{ _.url_base }}/{{ _.RESORCE }}"
+        name: index
+        meta:
+          id: req_8858f16c1f9c475ab19762bacf227c71
+          created: 1773887806305
+          modified: 1773975373164
+          isPrivate: false
+          description: ""
+          sortKey: -1773887808279
+        method: GET
+        parameters:
+          - name: title
+            value: orm
+            description: ""
+            disabled: false
+        headers:
+          - name: User-Agent
+            value: insomnia/12.4.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.url_base }}/{{ _.RESORCE }}"
+        name: create
+        meta:
+          id: req_139f916ad69a4dd786f5c8705a76ce9e
+          created: 1773887848401
+          modified: 1773975082803
+          isPrivate: false
+          description: ""
+          sortKey: -1773887693436
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"title":"Carro",
+            	"content":"Como persistir dados no Prisma ORM",
+            	"user_id":"e9c0de16-ad50-4792-964f-8eaefe39a47b"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.4.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.url_base }}/{{ _.RESORCE }}/24c77343-dd1c-4956-8cc5-64f67cfc6f7d"
+        name: update
+        meta:
+          id: req_9e15df0d0f0c463a92baea710975d1e6
+          created: 1773887875001
+          modified: 1773975157655
+          isPrivate: false
+          description: ""
+          sortKey: -1773887636014.5
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"title":"Chinelo",
+            	"content":"Como persistir dados no Prisma ORM"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.4.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.url_base }}/{{ _.RESORCE }}/7b8e6c3e-af1e-4941-a89a-2ea13d90e8f9"
+        name: remove
+        meta:
+          id: req_132c0240db4b4ab5b5605ab67d6d9c41
+          created: 1773887889638
+          modified: 1773975365791
+          isPrivate: false
+          description: ""
+          sortKey: -1773887607303.75
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/12.4.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+    environment:
+      RESORCE: questions
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_519e6752de62472acc2ccba9de3d044052501aab
+    created: 1773887355583
+    modified: 1773887355583
+environments:
+  name: Base Environment
+  meta:
+    id: env_519e6752de62472acc2ccba9de3d044052501aab
+    created: 1773887355581
+    modified: 1773887630193
+    isPrivate: false
+  data:
+    url_base: http://localhost:3333
