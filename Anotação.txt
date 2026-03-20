@@ -17,8 +17,6 @@ docker run --name db-postgres -e POSTGRESQL_USERNAME=postgres -e POSTGRESQL_PASS
 3.1 - Instala o prisma
 npm i prisma -D 
 
-
-
 3.2 configura o arquivo env
 npx prisma init --datasource-provider postgresql
 
@@ -29,5 +27,8 @@ npx prisma migrate dev
 
 3.5 abrir o prisma studio
 npx prisma studio
+
+3.6 executa o seed
+npx prisma db seed
 
 

@@ -3,14 +3,19 @@ import { prisma } from "../routes/prisma";
 
 class UsersController {
   async index(request: Request, response: Response) {
-    const users = await prisma.users.findMany();
+    const users = await prisma.user.findMany({
+      include: {
+        questions: true
+      }
+    });
+
     return response.json(users);
   }
 
   async create(request: Request, response: Response) {
     const { name, email } = request.body;
 
-    await prisma.users.create({
+    await prisma.user.create({
       data: {
         name,
         email,
@@ -22,7 +27,14 @@ class UsersController {
 
   async show(request: Request, response: Response) {
     const { id } = request.params;
-    const user = await prisma.users.findUnique({ where: { id } });
+    
+    const user = await prisma.user.findUnique({ 
+      where: { id },
+      include: {
+        questions: true
+      }
+    });
+
     return response.json(user);
   }
 }

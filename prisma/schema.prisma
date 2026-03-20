@@ -12,10 +12,26 @@ datasource db {
   provider = "postgresql"
 }
 
-model Users {
-  id    String @id @default(uuid())
-  name  String
-  email String @unique
+model User {
+  id        String     @id @default(uuid())
+  name      String
+  email     String     @unique
+  questions Question[]
 
   @@map("users")
+}
+
+model Question {
+  id      String @id @default(uuid())
+  title   String
+  content String
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  userId String @map("user_id")
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@map("questions")
 }

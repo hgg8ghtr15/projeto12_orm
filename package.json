@@ -6,6 +6,9 @@
   "scripts": {
     "dev": "tsx watch src/server.ts"
   },
+  "prisma":{
+    "seed": "tsx prisma/seeds.ts"
+  },
   "license": "ISC",
   "dependencies": {
     "@prisma/adapter-pg": "^7.5.0",
